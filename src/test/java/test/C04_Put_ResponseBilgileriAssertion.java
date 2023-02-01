@@ -40,7 +40,6 @@ public class C04_Put_ResponseBilgileriAssertion {
 
         JSONObject reqBody=new JSONObject();
         reqBody.put("title","Ahmet");
-        reqBody.put("title","Ahmet");
         reqBody.put("body","Merhaba");
         reqBody.put("userId",10);
         reqBody.put("id",70);
