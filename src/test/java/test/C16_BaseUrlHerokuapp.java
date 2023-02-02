@@ -83,7 +83,7 @@ public class C16_BaseUrlHerokuapp extends HerokuappBaseUrl {
                                 contentType(ContentType.JSON).
                             when().
                                 body(reqBody.toString()).
-                                post("/{pp11}");
+                                post("/{pp1}");
         response.prettyPrint();
 
         // 4 - Assertion
