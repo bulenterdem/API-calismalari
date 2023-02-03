@@ -1,8 +1,14 @@
 package testData;
 
+import org.json.JSONObject;
+
 import java.util.HashMap;
 
 public class TestDataHerokuapp {
+
+    public int basariliStatusCode = 200;
+    public String contentType = "application/json";
+
 
     /*
     {
@@ -53,5 +59,44 @@ public class TestDataHerokuapp {
 
         return expBodyMap;
     }
+
+    public JSONObject innerbodyJsonMethod(){
+
+        JSONObject innerBody = new JSONObject();
+
+        innerBody.put("checkin","2021-06-01");
+        innerBody.put("checkout","2021-06-10");
+
+        return innerBody;
+    }
+
+
+    public JSONObject reqBodyJsonMethod(){
+
+        JSONObject reqBody = new JSONObject();
+
+
+        reqBody.put("firstname", "Ahmet");
+        reqBody.put("lastname", "Bulut");
+        reqBody.put("totalprice", 500);
+        reqBody.put("depositpaid", false);
+        reqBody.put("bookingdates", innerbodyJsonMethod());
+        reqBody.put("additionalneeds", "wi-fi");
+
+        return reqBody;
+    }
+
+
+    public JSONObject expBody(){
+        JSONObject expBody = new JSONObject();
+
+
+        expBody.put("booking", reqBodyJsonMethod());
+        expBody.put("bookingid", 24.0);
+
+        return expBody;
+
+    }
+
 
 }
