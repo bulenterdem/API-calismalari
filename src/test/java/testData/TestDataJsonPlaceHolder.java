@@ -49,6 +49,16 @@ public class TestDataJsonPlaceHolder {
         return requestBodyMap;
     }
 
+    public HashMap expectBodyOlusturMap (){
 
+        HashMap<String,Object> expectedBodyMap = new HashMap<>();
+
+        expectedBodyMap.put("title","Ahmet");
+        expectedBodyMap.put("body","Merhaba");
+        expectedBodyMap.put("userId",10.0);
+        expectedBodyMap.put("id",70.0);
+
+        return expectedBodyMap;
+    }
 
 }

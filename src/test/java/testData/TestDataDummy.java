@@ -68,4 +68,58 @@ public class TestDataDummy {
 
         return expBody;
     }
+    public HashMap innerBody1OlusturMap (){
+
+        HashMap<String ,Object> innerBodyMap1 = new HashMap<>();
+
+        innerBodyMap1.put("id",40.0);
+        innerBodyMap1.put("name","Ahmet");
+        innerBodyMap1.put("salary",1230.0);
+        innerBodyMap1.put("age",44.0);
+
+
+        return innerBodyMap1;
+    }
+    public HashMap innerBody2OlusturMap(){
+
+        HashMap<String ,Object> innerBody2 = new HashMap<>();
+
+        innerBody2.put("status","success");
+       innerBody2.put("data",innerBody1OlusturMap());
+
+        return innerBody2;
+    }
+
+
+    public HashMap expected1BodyOlusturMap(){
+
+        HashMap<String ,Object> expBody1 = new HashMap<>();
+
+        expBody1.put("status","success");
+        expBody1.put("message","Successfully! Record has been fetched.");
+        expBody1.put("data",innerBody2OlusturMap());
+
+        return expBody1;
+    }
+
+    /*
+     }
+                Response Body
+                {
+              "status":"success",
+              "data":{
+                  "status":"success",
+                  "data":{
+                          "name":“Ahmet",
+                          "salary":"1230",
+                          "age":"44",
+                          "id":40
+                          }
+                     },
+              "message":"Successfully! Record has been updated."
+              }
+     */
+
+
+
 }
